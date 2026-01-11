@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FocusCart</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header__inner">
+        <h1 class="brand">FocusCart</h1>
+
+        <div class="header__right">
+          <label class="sr-only" for="search">Search products</label>
+          <input id="search" class="input" placeholder="Search products…" />
+
+          <select id="category" class="select" aria-label="Filter by category">
+            <option value="all">All categories</option>
+          </select>
+
+          <select id="sort" class="select" aria-label="Sort products">
+            <option value="relevance">Sort: Relevance</option>
+            <option value="price-asc">Price: Low → High</option>
+            <option value="price-desc">Price: High → Low</option>
+            <option value="rating-desc">Rating: High → Low</option>
+          </select>
+
+          <button id="clearCart" class="btn btn--ghost" type="button">
+            Clear Cart
+          </button>
+
+          <button id="cartToggle" class="btn" type="button" aria-expanded="false">
+            Cart <span id="cartCount" class="badge">0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container main">
+      <section class="products">
+        <h2 class="sectionTitle">Products</h2>
+        <div id="productsGrid" class="grid" aria-live="polite"></div>
+      </section>
+
+      <aside id="cartPanel" class="cart" aria-label="Shopping cart">
+        <div class="cart__header">
+          <h2 class="sectionTitle">Cart</h2>
+          <button id="cartClose" class="btn btn--ghost" type="button">Close</button>
+        </div>
+
+        <div id="cartItems" class="cart__items"></div>
+
+        <div class="cart__footer">
+          <div class="row">
+            <span>Total</span>
+            <strong id="cartTotal">₹0</strong>
+          </div>
+
+          <button id="checkout" class="btn btn--primary" type="button">
+            Checkout
+          </button>
+
+          <p class="hint" id="hintText">
+            Tip: Cart is saved in localStorage ✅
+          </p>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="footer container">
+      <small>Built with Vanilla JS • FocusCart</small>
+    </footer>
+
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>
